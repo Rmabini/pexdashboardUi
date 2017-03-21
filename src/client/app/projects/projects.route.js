@@ -21,7 +21,7 @@
           title: 'Project Status',
           settings: {
             nav: 2,
-            content: '<i class="fa fa-lock"></i> Admin'
+            content: '<i class="fa fa-lock"></i> Project Status'
           }
         }
       }
