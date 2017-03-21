@@ -6,7 +6,10 @@
     'app.widgets',
     'app.admin',
     'app.dashboard',
-    'app.layout'
+    'app.layout',
+    'app.project'
+
+
   ]);
 
 })();
