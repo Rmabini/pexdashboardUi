@@ -1,0 +1,9 @@
+{
+  "directory": "bower_components",
+  "scripts": {
+		"postinstall": "gulp wiredep"
+	},
+  "registry": "http://bower.herokuapp.com",
+  "proxy": "http://proxy.cognizant.com:6050",
+  "strict-ssl": false
+}
