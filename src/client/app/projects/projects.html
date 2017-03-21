@@ -6,6 +6,11 @@
           <div ht-widget-header >Project Status</div>
           <div class="widget-content user">
             <h3>Create Piegraph for Project Status</h3>
+            <div>
+              {{vm.data | json}}
+              <nvd3 options="options" data="data"></nvd3>
+              }
+            </div>
           </div>
           <div class="widget-foot">
             <div class="clearfix"></div>
