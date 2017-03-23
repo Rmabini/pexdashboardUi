@@ -64,7 +64,7 @@ gulp.task('styles', ['clean-styles'], function() {
   log('Compiling Less --> CSS');
 
   return gulp
-    .src(config.less)
+    .src([config.less,config.customLess])
     .pipe($.plumber()) // exit gracefully if something fails after this
     .pipe($.less())
     //        .on('error', errorLogger) // more verbose and dupe output. requires emit.
@@ -98,7 +98,7 @@ gulp.task('images', ['clean-images'], function() {
 });
 
 gulp.task('less-watcher', function() {
-  gulp.watch([config.less], ['styles']);
+  gulp.watch([config.less,config.customLess], ['styles']);
 });
 
 /**
@@ -525,10 +525,10 @@ function startBrowserSync(isDev, specRunner) {
   // If build: watches the files, builds, and restarts browser-sync.
   // If dev: watches less, compiles it to css, browser-sync handles reload
   if (isDev) {
-    gulp.watch([config.less], ['styles'])
+    gulp.watch([config.less,config.customLess], ['styles'])
       .on('change', changeEvent);
   } else {
-    gulp.watch([config.less, config.js, config.html], ['browserSyncReload'])
+    gulp.watch([config.less, config.customLess,config.js, config.html], ['browserSyncReload'])
       .on('change', changeEvent);
   }
 
@@ -538,6 +538,7 @@ function startBrowserSync(isDev, specRunner) {
     files: isDev ? [
       config.client + '**/*.*',
       '!' + config.less,
+      '!' + config.customLess,
       config.temp + '**/*.css'
     ] : [],
     watchOptions: {

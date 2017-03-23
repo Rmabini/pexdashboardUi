@@ -45,7 +45,7 @@ module.exports = function() {
       '**/*.js'
     ],
     less: client + 'styles/styles.less',
-    customLess: client + 'styles/pexStyle.less'
+    customLess: client + 'styles/pexStyle.less',
     report: report,
     root: root,
     server: server,
