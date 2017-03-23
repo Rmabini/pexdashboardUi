@@ -145,7 +145,7 @@ gulp.task('inject', ['wiredep', 'styles', 'templatecache'], function() {
 
   return gulp
     .src(config.index)
-    .pipe(inject(config.css))
+    .pipe(inject([config.css,config.customCss]))
     .pipe(gulp.dest(config.client));
 });
 
