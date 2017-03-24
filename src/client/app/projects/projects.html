@@ -5,10 +5,18 @@
         <div class="widget wviolet">
           <div ht-widget-header >{{vm.title}}</div>
           <div class="widget-content user">
-            <h3>{{vm.label}}</h3>
-            <div>
-              <nvd3 options="options" data="data"></nvd3>
-            </div>
+            <ul class="pexPieGraph">
+              <li>
+                 <h3> Verticals : </h3> 
+                 <hr />
+                 <nvd3 options="options" data="data"></nvd3>
+              </li>
+              <li>
+                 <h3> Projects : </h3>
+                 <hr />
+                 <nvd3 options="options" data="data"></nvd3>
+              </li>
+            </ul>
           </div>
           <div class="widget-foot">
             <div class="clearfix"></div>
